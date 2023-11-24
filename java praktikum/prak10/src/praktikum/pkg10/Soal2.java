@@ -15,12 +15,12 @@ public class Soal2 {
         int jarak, waktu, tarif; 
         String cuaca;
         Scanner input = new Scanner(System.in);
-        System.out.println("Inputkan Cuaca = ");
-        cuaca = input.nextLine();
         System.out.println("Inputkan Jarak Tempuh (dalam km) = ");
         jarak = input.nextInt();
         System.out.println("Inputkan Waktu Tempuh = ");
         waktu = input.nextInt();
+        System.out.println("Inputkan Cuaca = ");
+        cuaca = input.next();
           
         
         tarif = 10000;

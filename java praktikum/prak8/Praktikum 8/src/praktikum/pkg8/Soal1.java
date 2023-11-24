@@ -26,7 +26,7 @@ public class Soal1 {
         System.out.println("f = fahrenheit");
         System.out.println("=================");
         System.out.println("Masukan Jenis Suhu Awal = ");
-        j = suhu.nextLine();
+        j = suhu.next();
 
         if ("c".equals(j)) {
             System.out.println("inputkan berapa derajat celcius : ");
