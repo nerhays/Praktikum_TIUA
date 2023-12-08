@@ -44,7 +44,7 @@ public class Tantanganv2 {
                 case 1:
                     System.out.println("Masukkan Nomer Loker = ");
                     n = input.nextInt();
-                    if (n < 10) {
+                    if (n < 10 && n>= 0) {
                         if (loker[n][0] == 0) {
 
                             System.out.println("Masukkan Pasword = ");
@@ -65,7 +65,7 @@ public class Tantanganv2 {
                 case 2:
                     System.out.println("Masukkan Nomer Loker = ");
                     n = input.nextInt();
-                    if (n < 10) {
+                    if (n < 10 && n>= 0) {
                         if (loker[n][0] == 1) {
 
                             System.out.println("Masukkan Pasword = ");
