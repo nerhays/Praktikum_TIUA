@@ -39,7 +39,7 @@ public class Tantanganke2 {
                 pembelian(isi);
                 break;
             case 2:
-                getstok(isi);                
+                getstok(isi);
                 break;
             case 3:
                 tambahstok(isi);
@@ -50,19 +50,23 @@ public class Tantanganke2 {
         }
         rekursif(isi);
     }
-    
-    public static void tambahstok(int[][] isi){
+
+    public static void tambahstok(int[][] isi) {
         System.out.println("[0] Teh Pucuk");
         System.out.println("[1]  Fruit Tea");
         System.out.println("[2] Pocari Sweat");
         System.out.println("[3] Le mineral");
         System.out.println("Pilih Barang = ");
         int barang = input.nextInt();
-        System.out.println("Berapa Jumlah yang ingin ditambahkan = ");
-        int tambah = input.nextInt();
-        
-        isi[barang][0] += tambah;
-        
+
+        if (barang < 4 && barang > 0) {
+            System.out.println("Berapa Jumlah yang ingin ditambahkan = ");
+            int tambah = input.nextInt();
+            isi[barang][0] += tambah;
+        }else{
+            System.out.println("Barang hanya 0-3 sesuai pilihan");
+        }
+
         //System.out.println();
     }
 
@@ -73,12 +77,13 @@ public class Tantanganke2 {
         isi[2][0] = 4;
         isi[3][0] = 4;
     }
+
     public static void getstok(int[][] isi) {
         int i = 0;
-                while(i < 4){
-                    System.out.println("Stok Barang ke-"+i + " = "+isi[i][0]);
-                    i++;
-                }
+        while (i < 4) {
+            System.out.println("Stok Barang ke-" + i + " = " + isi[i][0]);
+            i++;
+        }
     }
 
     public static void setHarga(int[][] isi) {
@@ -113,20 +118,24 @@ public class Tantanganke2 {
         System.out.println("=================");
         System.out.println("Masukan pilihan anda: ");
         barang = input.nextInt();
-        
-        if (isi[barang][0] > 0) {
-                    System.out.print("Nama Pesanan = ");
-                    setbarang(barang);
 
-                    System.out.print("Jumlah yang dibayarkan = ");
-                    System.out.println(isi[barang][1]);
-                    pendapatan += isi[barang][1];
-                    isi[barang][0]--;
-                } else {
-                    System.out.println("Barang Habis");
-                }
+        if (barang < 4 && barang >= 0) {
+            if (isi[barang][0] > 0) {
+                System.out.print("Nama Pesanan = ");
+                setbarang(barang);
 
+                System.out.print("Jumlah yang dibayarkan = ");
+                System.out.println(isi[barang][1]);
+                pendapatan += isi[barang][1];
+                isi[barang][0]--;
+            } else {
+                System.out.println("Barang Habis");
+            }
+        } else {
+            System.out.println("Barang hanya 0-3 sesuai pilihan");
         }
+
+    }
 
     static void setbarang(int barang) {
         if (barang == 0) {
@@ -141,10 +150,9 @@ public class Tantanganke2 {
             System.out.println("Barang Tidak Ada");
         }
     }
-    
-    public static void getpendapatan(int[][] isi){
-        System.out.println("Pendapatan dari Vending Machine Rp. "+pendapatan);
+
+    public static void getpendapatan(int[][] isi) {
+        System.out.println("Pendapatan dari Vending Machine Rp. " + pendapatan);
     }
-    
 
 }
